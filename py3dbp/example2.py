@@ -1,3 +1,4 @@
+import json
 from main import Packer, Bin, Item
 
 packer = Packer()
@@ -25,4 +26,5 @@ packer.pack()
 
 for bin in packer.bins:
     if bin.items:
+        print(json.dumps(bin, default=lambda x: x.__dict__))
         print(len(bin.items))
